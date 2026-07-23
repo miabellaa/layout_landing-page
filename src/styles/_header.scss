@@ -54,17 +54,6 @@
     }
   }
 
-  &__phone-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    &:hover .header__contacts {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
   &__contacts {
     position: absolute;
     right: 100%;
@@ -81,6 +70,17 @@
       visibility 0.3s ease;
 
     &.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__phone-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:hover .header__contacts {
       opacity: 1;
       visibility: visible;
     }
