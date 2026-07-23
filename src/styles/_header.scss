@@ -3,9 +3,8 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-
-  min-height: 568px;
-  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
     url('../../images/header.png');
   background-size: cover;
@@ -59,6 +58,11 @@
     position: relative;
     display: flex;
     align-items: center;
+
+    &:hover .header__contacts {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__contacts {

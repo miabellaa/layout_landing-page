@@ -51,6 +51,7 @@
       flex: 1;
       min-width: 0;
       aspect-ratio: 1 / 1;
+      overflow: hidden;
 
       @media (min-width: 744px) {
         flex: none;
@@ -68,6 +69,13 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    cursor: pointer;
+    transition: transform 0.4s ease, filter 0.4s ease;
+
+    &:hover {
+      transform: scale(1.08);
+      filter: brightness(0.95);
+    }
   }
 
   &__item {

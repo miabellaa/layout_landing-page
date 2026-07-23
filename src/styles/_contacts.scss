@@ -123,9 +123,14 @@
     text-decoration: none;
     text-align: left;
     white-space: nowrap;
+
+    &:hover {
+      color: #d12d35; 
+    }
   }
 
   &__text {
+    display: block;
     font-weight: 700;
     font-size: 16px;
     line-height: 140%;
@@ -133,7 +138,12 @@
     margin-bottom: 0;
     color: #3e3e3e;
     text-align: left;
+    text-decoration: none;
     white-space: nowrap;
+
+    &:hover {
+      color: #d12d35;
+    }
   }
 
   &__form {

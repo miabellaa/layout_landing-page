@@ -7,6 +7,8 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>THE MET — Landing Page</title>
+    <link rel="icon" type="image/svg+xml"
+    href="images/favicon.png">
 
     <link
       rel="preconnect"
@@ -52,7 +54,7 @@
           class="header__logo"
         >
           <img
-            src="images/THE MET.png"
+            src="images/THE MET.svg"
             alt="THE MET"
           />
         </a>
@@ -118,7 +120,7 @@
             class="menu__logo"
           >
             <img
-              src="images/THE MET.png"
+              src="images/THE MET.svg"
               alt="THE MET"
             />
           </a>
@@ -424,11 +426,16 @@
           </a>
 
           <span class="contacts__label-address">Address</span>
-          <p class="contacts__text">
+          <a
+            href="https://maps.app.goo.gl/RK8MrhiugTuhNGX87"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contacts__text"
+          >
             1000 Fifth Avenue
             <br />
             New York, NY 10028
-          </p>
+          </a>
         </address>
 
         <address class="contacts__branch">
@@ -443,13 +450,18 @@
           </a>
 
           <span class="contacts__label-address">Address</span>
-          <p class="contacts__text">
+          <a
+          href="https://maps.app.goo.gl/AyuuKETscdaGeSPm7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contacts__text"
+        >
             99 Margaret Corbin Drive
             <br />
             Fort Tryon Park
             <br />
             New York, NY 10040
-          </p>
+          </a>
         </address>
 
         <form class="contacts__form">
@@ -497,26 +509,39 @@
         const phonePopover = document.getElementById('phone-popover');
 
         const navLinks = document.querySelectorAll('.nav__link');
+        const contactsForm = document.querySelector('.contacts__form');
 
-        if (burgerBtn && sideMenu) {
+        function openMenu() {
+          if (sideMenu) {
+            sideMenu.classList.add('is-open');
+            document.body.classList.add('no-scroll');
+          }
+        }
+
+        function closeMenu() {
+          if (sideMenu) {
+            sideMenu.classList.remove('is-open');
+            document.body.classList.remove('no-scroll');
+          }
+        }
+
+        if (burgerBtn) {
           burgerBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            sideMenu.classList.add('is-open');
+            openMenu();
           });
         }
 
-        if (closeBtn && sideMenu) {
+        if (closeBtn) {
           closeBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            sideMenu.classList.remove('is-open');
+            closeMenu();
           });
         }
 
         navLinks.forEach(function (link) {
           link.addEventListener('click', function () {
-            if (sideMenu) {
-              sideMenu.classList.remove('is-open');
-            }
+            closeMenu();
           });
         });
 
@@ -533,6 +558,13 @@
             ) {
               phonePopover.classList.remove('is-open');
             }
+          });
+        }
+
+        if (contactsForm) {
+          contactsForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            contactsForm.reset();
           });
         }
       });

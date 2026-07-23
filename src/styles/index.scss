@@ -19,5 +19,8 @@ body {
   padding: 0;
   font-family: Cinzel, serif;
   background-color: white;
-  overflow-x: hidden;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
